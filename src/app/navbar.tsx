@@ -25,8 +25,22 @@ const Navbar: React.FC = () => {
                     className="md:hidden"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="yellow-pink-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#EAB308"/>
+                                {/* yellow-500 */}
+                                <stop offset="100%" stopColor="#EC4899"/>
+                                {/* pink-500 */}
+                            </linearGradient>
+                        </defs>
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16M4 18h16"
+                            stroke="url(#yellow-pink-gradient)"
+                        />
                     </svg>
                 </button>
 
