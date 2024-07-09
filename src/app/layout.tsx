@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import {Honk} from 'next/font/google'
 
-const inter = Inter({ subsets: ["latin"] });
+//import order does matter
+import "./globals.css";
+import Navbar from "@/app/navbar";
+
+const honk = Honk({
+  weight: '400',
+  subsets: ['latin'],
+
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +23,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+    <body className={honk.className}>
+    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-cyan-900 to-cyan-700">
+        <Navbar/>
+        {children}
+    </div>
+    </body>
     </html>
   );
 }
+//"min-h-screen bg-cover bg-center bg-fixed"
+//          style={{backgroundImage: "url('/images/bg.png')"}}
