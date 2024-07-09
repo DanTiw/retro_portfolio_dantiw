@@ -1,4 +1,4 @@
-// pages/api/contact.ts
+// pages/api/form.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 // @ts-ignore
 import { sql } from '@vercel/postgres';
