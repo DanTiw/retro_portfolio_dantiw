@@ -12,7 +12,7 @@ const ContactForm: React.FC = () => {
         setStatus('submitting');
 
         try {
-            const response = await fetch('/api/form.ts', {
+            const response = await fetch('/api/form', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message }),

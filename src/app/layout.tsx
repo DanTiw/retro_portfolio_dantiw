@@ -5,6 +5,7 @@ import {Honk} from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/app/navbar";
 
+
 const honk = Honk({
   weight: '400',
   subsets: ['latin'],
@@ -14,6 +15,7 @@ const honk = Honk({
 export const metadata: Metadata = {
   title: "Danish Tiwari",
   description: "Portfolio Website by Danish",
+
 };
 
 export default function RootLayout({
@@ -23,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
 
     <body className={honk.className}>
     <div className="min-h-screen bg-gradient-to-b from-gray-800 via-cyan-900 to-cyan-700">
