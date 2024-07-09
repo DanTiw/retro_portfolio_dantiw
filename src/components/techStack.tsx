@@ -15,34 +15,37 @@ const TechStack = () => {
         { name: 'MongoDB', icon: '/SVGs/mongo.svg' },
         { name: 'PostgreSQL', icon: '/SVGs/postgres.svg' },
         { name: 'Firebase', icon: '/SVGs/firebase.svg' },
-        { name: 'Next14', icon: '/SVGs/Next.svg' },
+        { name: 'Next14', icon: '/SVGs/next.svg' },
         { name: 'Python', icon: '/SVGs/python.svg' },
 
     ];
 
     return (
-        <div className=" p-6 rounded-lg shadow-2xl">
-            <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">My Tech Stack</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
+        <div className="p-4 sm:p-6 rounded-lg shadow-2xl">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center text-gray-800">My Tech Stack</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {technologies.map((tech, index) => (
-                    <div key={index} className="flex flex-col items-center p-4 bg-gradient-to-b from-yellow-500 to-pink-500 rounded-md hover:shadow-xl transition-shadow duration-300 h-60 w-80 transform transition duration-300 hover:scale-105 cursor-pointer">
-                        <div className="w-12 h-12 relative mb-2 p-12 mt-10">
+                    <div
+                        key={index}
+                        className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-yellow-500 to-pink-500 rounded-md hover:shadow-xl h-60  sm: h-30 w-full transform transition duration-300 hover:scale-105 cursor-pointer mx-auto"
+                    >
+                        <div className="relative w-1/2 h-1/2 mb-2">
                             <Image
                                 src={tech.icon}
                                 alt={`${tech.name} icon`}
                                 layout="fill"
                                 objectFit="contain"
-
                             />
                         </div>
-                        <span className="text-2xl font-medium text-gray-700">{tech.name}</span>
+                        <span className="text-lg font-medium text-gray-700 text-center mt-2">
+            {tech.name}
+          </span>
                     </div>
                 ))}
             </div>
         </div>
     );
 };
-
 
 
 export default TechStack;

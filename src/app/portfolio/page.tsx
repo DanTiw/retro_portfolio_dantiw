@@ -4,8 +4,8 @@ import Link from 'next/link';
 const portfolio = () => {
     const projects = [
         { id: 1, title: 'Zenith', description: 'An activity tracker made for small scale businesses to assign tasks to Employees' +
-                '\nTech Used ' +
-                '\nJavascript'
+                '\nTech Used' +
+                ' Javascript'
             , github: 'https://zenith-f8eab.web.app' },
         { id: 2, title: 'Collaborative Text Editor', description: 'A Real-time Rich text editor ', github: 'https://github.com/DanTiw/collaborative-text-editor' },
         { id: 3, title: 'The QR Code Generator', description: 'Simple QR code Generator', github: 'https://github.com/DanTiw/QR-code-generator-with-Tkinter-GUI' },

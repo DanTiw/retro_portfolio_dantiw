@@ -4,41 +4,41 @@ import Link from "next/link";
 export default function Home() {
 
         return (
-                <main className="p-2 sm:p-8 md:p-16 lg:p-18 ">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-2 mb-16">
-                        <div className="w-full md:w-2/3 lg:w-3/4">
-                            <p className="text-xl sm:text-2xl lg:text-3xl opacity-0 animate-fadeIn">
-                                Hello! I'm Danish Tiwari, a passionate and dedicated Full Stack Developer specializing
-                                in
-                                MERN stack with expertise in Next.js and TypeScript. My journey in web development has
-                                been driven by a relentless curiosity and a desire to create impactful, efficient, and
-                                user-friendly applications.
-                            </p>
+            <main className="px-4 py-8 sm:p-8 md:p-12 lg:p-16">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                    <div className="w-full md:w-2/3 lg:w-3/4 space-y-6">
+                        <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl opacity-0 animate-fadeIn">
+                            Hello! I'm Danish Tiwari, a passionate and dedicated Full Stack Developer specializing in
+                            MERN stack with expertise in Next.js and TypeScript. My journey in web development has
+                            been driven by a relentless curiosity and a desire to create impactful, efficient, and
+                            user-friendly applications.
+                        </p>
+                        <Link href="/portfolio">
                             <button
-                                className="p-2 mt-4 rounded-md  hover:shadow-xl transition-shadow hover:bg-gradient-to-t from-yellow-500 to-pink-500 duration-500">
-                                <Link href={'/portfolio'}>
-                                    Know More
-                                </Link>
+                                className="px-6 py-3 text-sm mt-4 sm:text-base rounded-md  text-white font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r from-yellow-500 to-pink-500">
+                                Know More
                             </button>
-
-                        </div>
-                        <div className="w-full md:w-1/3 lg:w-1/4 flex justify-center md:justify-end">
+                        </Link>
+                    </div>
+                    <div className="w-full md:w-1/3 lg:w-1/4 flex justify-center md:justify-end mt-8 md:mt-0">
+                        <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                             <Image
-                                className="rounded-3xl opacity-0 animate-fadeIn"
-                                src="/images/Designer.png"
+                                className="rounded-3xl opacity-0 animate-fadeIn object-cover"
+                                src="/images/webpAvatar.webp"
                                 alt="Avatar"
-                                width={200}
-                                height={200}
-                                objectFit="cover"
+                                layout="fill"
                             />
                         </div>
                     </div>
+                </div>
 
-                    <div className="mt-1 sm:mt-12 md:mt-16">
-                        <TechStack/>
-                    </div>
-                </main>
 
-                );
-                };
+    <div className="mt-1 sm:mt-12 md:mt-16">
+        <TechStack/>
+    </div>
+</main>
+
+)
+    ;
+};
 
