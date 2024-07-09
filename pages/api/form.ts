@@ -1,6 +1,5 @@
 // pages/api/form.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-// @ts-ignore
 import { sql } from '@vercel/postgres';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
