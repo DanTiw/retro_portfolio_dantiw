@@ -37,7 +37,7 @@ const TechStack = () => {
                                 objectFit="contain"
                             />
                         </div>
-                        <span className="text-xl font-medium text-gray-700 text-center mt-2">
+                        <span className="text-xl font-medium text-black text-center mt-2">
             {tech.name}
           </span>
                     </div>
