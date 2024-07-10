@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import {Honk} from 'next/font/google'
+import {Press_Start_2P} from 'next/font/google'
 
 //import order does matter
 import "./globals.css";
 import Navbar from "@/app/navbar";
 
 
-const honk = Honk({
+const honk = Press_Start_2P({
   weight: '400',
   subsets: ['latin'],
 
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
 
 
-    <body className={honk.className}>
+    <body className={honk.className} >
     <div className="min-h-screen bg-gradient-to-b from-gray-800 via-cyan-900 to-cyan-700">
         <Navbar/>
         {children}

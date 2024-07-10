@@ -6,9 +6,9 @@ const ResumeLink = () => {
     return (
         <div className="p-4">
             <a
-                href="/images/avatar.png"
+                href="/Danish'sResume.pdf"
                 download
-                className=" duration-300 animate-bounce text-4xl  hover:text-red-500"
+                className=" bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500 duration-300 animate-bounce text-4xl  hover:bg-gradient-to-l from-yellow-500 to-pink-500 "
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             >

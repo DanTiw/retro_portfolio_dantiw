@@ -27,7 +27,7 @@ const TechStack = () => {
                 {technologies.map((tech, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-yellow-500 to-pink-500 rounded-md hover:shadow-xl h-60  sm: h-30 w-full transform transition duration-300 hover:scale-105 cursor-pointer mx-auto"
+                        className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-yellow-500 to-pink-500 rounded-md hover:shadow-xl h-60   sm:flex w-full"
                     >
                         <div className="relative w-1/2 h-1/2 mb-2">
                             <Image
@@ -37,7 +37,7 @@ const TechStack = () => {
                                 objectFit="contain"
                             />
                         </div>
-                        <span className="text-lg font-medium text-gray-700 text-center mt-2">
+                        <span className="text-xl font-medium text-gray-700 text-center mt-2">
             {tech.name}
           </span>
                     </div>
