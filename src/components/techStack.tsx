@@ -22,14 +22,14 @@ const TechStack = () => {
 
     return (
         <div className="p-4 sm:p-6 rounded-lg shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center text-gray-800">My Tech Stack</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center ">My Tech Stack</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {technologies.map((tech, index) => (
                     <div
                         key={index}
                         className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-yellow-500 to-pink-500 rounded-md hover:shadow-xl h-60   sm:flex w-full"
                     >
-                        <div className="relative w-1/2 h-1/2 mb-2">
+                        <div className="relative w-1/2 h-1/2 mb-2 ">
                             <Image
                                 src={tech.icon}
                                 alt={`${tech.name} icon`}

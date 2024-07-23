@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     ];
 
     return (
-        <nav className="text-lg md:text-xl lg:text-2xl p-4 shadow-xl">
+        <nav className="text-lg md:text-lg lg:text-lg p-4 shadow-xl">
             <div className="container mx-auto flex justify-between items-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500">
                 <ResumeLink />
 
@@ -45,12 +45,12 @@ const Navbar: React.FC = () => {
                 </button>
 
                 {/* Desktop menu */}
-                <ul className="hidden md:flex space-x-4">
+                <ul className="hidden md:flex space-x-2">
                     {navItems.map((item) => (
                         <li key={item.path}>
                             <Link
                                 href={item.path}
-                                className={`hover:text-gray-800 hover:bg-gradient-to-t to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
+                                className={` hover:text-gray-800 hover:bg-gradient-to-t to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
                                     pathname === item.path ? 'text-gray-800 bg-gradient-to-l from-yellow-500 to-pink-500 p-4 rounded-2xl' : ''
                                 }`}
                             >
