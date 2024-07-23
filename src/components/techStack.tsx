@@ -32,7 +32,7 @@ const TechStack = () => {
                         <div className="relative w-1/2 h-1/2 mb-2 ">
                             <Image
                                 src={tech.icon}
-                                alt={`${tech.name} icon`}
+                                alt={`${tech.name} icon Danish Tiwari Skills`}
                                 layout="fill"
                                 objectFit="contain"
                             />

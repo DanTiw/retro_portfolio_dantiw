@@ -1,5 +1,7 @@
 "use client"
+import Link from 'next/link';
 import React, { useState } from 'react';
+import Image from 'next/image'
 
 const ContactForm: React.FC = () => {
     const [name, setName] = useState('');
@@ -33,6 +35,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
+        <>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-t from-yellow-500 to-pink-500 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6 text-center">Contact Me!</h2>
             <div className="mb-4">
@@ -82,6 +85,28 @@ const ContactForm: React.FC = () => {
                 <p className="mt-4 text-red-600">There was an error sending your message. Please try again.</p>
             )}
         </form>
+        <footer className="mt-4 p-4">
+      <div className="flex justify-center items-center space-x-4">
+        <Link href="https://github.com/DanTiw" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:scale-125 transition-colors duration-300">
+            <Image
+                src="/SVGs/github.svg"
+                alt="Github Logo Danish Tiwari"
+                width={24}
+                height={24} 
+            />
+        </Link>
+        <Link href="https://www.linkedin.com/in/danishtiwari" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transition-colors duration-300">
+        <Image
+                src="/SVGs/linkedin.svg"
+                alt="LinkedIN logo Danish Tiwari"
+                width={24}
+                height={24} 
+            />
+        </Link>
+      </div>
+    </footer>
+        </>
+
     );
 };
 
