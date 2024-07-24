@@ -7,7 +7,7 @@ import Navbar from "@/app/navbar";
 import Head from "next/head";
 
 
-const honk = Press_Start_2P({
+const fontD = Press_Start_2P({
   weight: '400',
   subsets: ['latin'],
 
@@ -48,7 +48,7 @@ export default function RootLayout({
         />
     </Head>
 
-    <body className={honk.className} >
+    <body className={fontD.className} >
     <div className="min-h-screen bg-gradient-to-b from-gray-800 via-cyan-900 to-cyan-700">
         <Navbar/>
         {children}
