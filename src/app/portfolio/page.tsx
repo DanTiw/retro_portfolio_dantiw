@@ -43,8 +43,8 @@ const Portfolio = () => {
               <CardItem translateZ="120" className="w-full mt-4">
                 <Link href={project.github} passHref>
                   <Button className="w-full text-xs sm:text-sm">
-                    <GithubIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    View on GitHub
+                   
+                    Details
                   </Button>
                 </Link>
               </CardItem>
