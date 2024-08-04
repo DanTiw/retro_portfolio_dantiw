@@ -8,7 +8,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
                     <div className="w-full md:w-2/3 lg:w-3/4 space-y-6">
                         <p className="md:text-lg lg:text-xl xl:text-2xl ">
-                            Hello! I'm Danish Tiwari, a passionate and dedicated Full Stack Developer specializing in
+                            Hello! I'm  Danish Tiwari, a passionate and dedicated Full Stack Developer specializing in
                             MERN stack with expertise in Next.js and TypeScript. My journey in web development has
                             been driven by a relentless curiosity and a desire to create impactful, efficient, and
                             user-friendly applications.Growing and learning everyday, I am always looking for new
@@ -21,22 +21,14 @@ export default function Home() {
                             </button>
                         </Link>
                     </div>
-                    <div className="w-full md:w-1/3 lg:w-1/4 flex justify-center md:justify-end mt-8 md:mt-0">
-                        <div className="relative w-48 h-48 sm:w-56 sm:h-56 mb-10 lg:w-64 lg:h-64">
-                            <Image
-                                className="rounded-3xl "
-                                src="/images/webpAvatar.webp"
-                                alt="Avatar"
-                                layout="fill"
-                            />
-                        </div>
-                    </div>
+                    <TechStack/>
+                    
+                       
+                    
                 </div>
+                
 
-
-    <div className="mt-1 sm:mt-12 md:mt-16">
-        <TechStack/>
-    </div>
+    
 </main>
 
 )

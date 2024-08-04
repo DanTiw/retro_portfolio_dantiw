@@ -4,7 +4,7 @@ import {Press_Start_2P} from 'next/font/google'
 //import order does matter
 import "./globals.css";
 import Navbar from "@/app/navbar";
-import Head from "next/head";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 
 const fontD = Press_Start_2P({
@@ -26,36 +26,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <Head>
-    <title>Danish Tiwari</title>
-        <meta name="description" content="Portfolio Website by Danish" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Danish Tiwari",
-              "url": "https://danish-tiwari.vercel.app/",
-              "jobTitle": "Your Job Title",
-              "sameAs": [
-                "https://www.linkedin.com/in/danishtiwari",
-                "https://github.com/DanTiw",
-              ],
-              "description": "Brief description about Danish Tiwari and his expertise."
-            })
-          }}
-        />
-    </Head>
-
-    <body className={fontD.className} >
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-cyan-900 to-cyan-700">
-        <Navbar/>
-        {children}
-    </div>
-    </body>
+      <body className={fontD.className}>
+        <div className="h-full w-full relative bg-black overflow-hidden">
+          <SparklesCore
+            id="tsparticles"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full absolute"
+            particleColor="#8b5cf6"
+          />
+          <main className="relative z-10">
+            <Navbar />
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   );
 }
-//"min-h-screen bg-cover bg-center bg-fixed"
-//          style={{backgroundImage: "url('/images/bg.png')"}}

@@ -68,8 +68,8 @@ const Navbar: React.FC = () => {
                         <li key={item.path}>
                             <Link
                                 href={item.path}
-                                className={`block py-2 px-4 hover:text-gray-800 hover:bg-gradient-to-t from-yellow-500 to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
-                                    pathname === item.path ? 'text-gray-800 bg-gradient-to-l from-yellow-500 to-pink-500 p-4 rounded-2xl' : ''
+                                className={`block py-2 px-4 text-white hover:text-white hover:bg-gradient-to-t from-yellow-500 to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
+                                    pathname === item.path ? 'text-white bg-gradient-to-l from-yellow-500 to-pink-500 p-4 rounded-2xl' : ''
                                 }`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
