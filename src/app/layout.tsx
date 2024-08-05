@@ -27,17 +27,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontD.className}>
-        <div className="h-full w-full relative bg-black overflow-hidden">
-          <SparklesCore
-            id="tsparticles"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full absolute"
-            particleColor="#8b5cf6"
-          />
-          <main className="relative z-10">
+      <div className="min-h-screen w-full bg-black flex flex-col items-center justify-start overflow-auto">
+      <div className="w-full fixed inset-0">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full "
+          particleColor="#FFF3B0"
+        />
+      </div>
+          <main className="relative z-10 w-full">
             <Navbar />
             {children}
           </main>

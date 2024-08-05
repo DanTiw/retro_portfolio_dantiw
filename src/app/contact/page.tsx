@@ -2,7 +2,12 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image'
-
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { GithubIcon, LinkedinIcon } from "lucide-react";
 const ContactForm: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -35,79 +40,82 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-t from-yellow-500 to-pink-500 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-6 text-center">Contact Me!</h2>
-            <div className="mb-4">
-                <label htmlFor="name" className="block mb-2 text-2xl font-medium text-gray-700">Name</label>
-                <input
-                    type="text"
+       
+     
+    <>
+        <Card className="w-[50vw] h-[70vh] mt-[5vh] ml-[25vw] bg-transparent  border-none bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent" >
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-center ">Contact Me!</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="text-xl w-full  px-3 py-2 bg-cyan-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="email" className="block mb-2 text-2xl font-medium text-gray-700">Email</label>
-                <input
+                    className="bg-transparent border-none hover:bg-gradient-to-r hover:from-yellow-500 hover:to-pink-500 focus:bg-gradient-to-r focus:from-yellow-500 focus:to-pink-500 hover:text-black focus:text-black transition-all duration-300"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
                     type="email"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="text-xl w-full px-3 py-2 bg-cyan-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="message" className="block mb-2 text-2xl font-medium text-gray-700">Message</label>
-                <textarea
+                    className="bg-transparent border-none hover:bg-gradient-to-r hover:from-yellow-500 hover:to-pink-500 focus:bg-gradient-to-r focus:from-yellow-500 focus:to-pink-500 hover:text-black focus:text-black transition-all duration-300"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
                     rows={4}
-                    className="text-xl w-full px-3 py-2 bg-cyan-800  rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-                ></textarea>
-            </div>
-            <button
+                    className="bg-transparent border-none hover:bg-gradient-to-r hover:from-yellow-500 hover:to-pink-500 focus:bg-gradient-to-r focus:from-yellow-500 focus:to-pink-500 hover:text-black focus:text-black transition-all duration-300"
+
+                  />
+                </div>
+              </div>
+              <Button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full px-4 py-2 text-white bg-gray-500 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
-            >
+                className="w-full mt-4 bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent"
+              >
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
-            </button>
+              </Button>
+            </form>
+          </CardContent>
+          <CardFooter>
             {status === 'success' && (
-                <p className="mt-4 text-green-600">Your message has been sent successfully!</p>
+              <p className="text-green-600">Your message has been sent successfully!</p>
             )}
             {status === 'error' && (
-                <p className="mt-4 text-red-600">There was an error sending your message. Please try again.</p>
+              <p className="text-red-600">There was an error sending your message. Please try again.</p>
             )}
-        </form>
-        <footer className="mt-4 p-4">
-      <div className="flex justify-center items-center space-x-4">
-        <Link href="https://github.com/DanTiw" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:scale-125 transition-colors duration-300">
-            <Image
-                src="/SVGs/github.svg"
-                alt="Github Logo Danish Tiwari"
-                width={24}
-                height={24} 
-            />
-        </Link>
-        <Link href="https://www.linkedin.com/in/danishtiwari" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transition-colors duration-300">
-        <Image
-                src="/SVGs/linkedin.svg"
-                alt="LinkedIN logo Danish Tiwari"
-                width={24}
-                height={24} 
-            />
-        </Link>
-      </div>
-    </footer>
-        </>
+          </CardFooter>
+        </Card>
+      
 
-    );
+      <footer className="mt-4 p-4">
+        <div className="flex justify-center items-center space-x-4">
+          <Link href="https://github.com/DanTiw" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:scale-125 transition-transform duration-300">
+            <GithubIcon size={24} />
+          </Link>
+          <Link href="https://www.linkedin.com/in/danishtiwari" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:scale-125 transition-transform duration-300">
+            <LinkedinIcon size={24} />
+          </Link>
+        </div>
+      </footer>
+    </>
+  );
 };
 
 export default ContactForm;

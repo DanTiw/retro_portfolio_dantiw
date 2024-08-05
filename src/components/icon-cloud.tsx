@@ -26,9 +26,9 @@ const slugs = [
 
 const TechStackCloud: React.FC = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center md:mt-16">
-     
-      <div className="flex h-[400px] w-full max-w-[84rem] items-center justify-center overflow-hidden rounded-lg bg-black-900 px-20 pb-20 pt-8">
+    <div className="w-full flex flex-col items-center justify-center ">
+      <h1 className="bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent text-2xl font-bold">Tech Stack</h1>
+      <div className="flex h-auto w-full max-w-[90vw] sm:max-w-[84rem] items-center justify-center overflow-hidden rounded-lg bg-black-900 p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20">
         <IconCloud iconSlugs={slugs} />
       </div>
     </div>
