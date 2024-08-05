@@ -15,17 +15,12 @@ const MyProjectPage = () => {
     ],
    
     projectUrl: "https://github.com/rheetham/zenith",
+    liveUrl: "https://zenith-f8eab.web.app/"
   };
 
   return (
     <div>
       <ProjectDetails {...projectData} />
-   
-        <Link href="https://zenith-f8eab.web.app/"   target="_blank" className="ml-6 px-6 py-3 text-sm mt-2 sm:text-base rounded-md  text-white font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r from-yellow-500 to-pink-500">
-           Live
-           
-            </Link>
-   
     </div>
   );
 };

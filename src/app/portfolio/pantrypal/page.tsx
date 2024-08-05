@@ -14,7 +14,8 @@ const MyProjectPage = () => {
            
         ],
 
-        projectUrl: "https://github.com/DanTiw/Hangman-Python",
+        projectUrl: "https://github.com/DanTiw/pantry_tracker",
+        liveUrl: "https://pantry-tracker-ochre.vercel.app/"
     };
 
     return (
