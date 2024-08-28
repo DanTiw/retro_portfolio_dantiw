@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import { GithubIcon } from "lucide-react";
 
 const projects = [
-  { id: 1, title: 'Zenith', description: 'An activity tracker made for small scale businesses to assign tasks to Employees', github: '/portfolio/zenith' },
-  { id: 2, title: 'PantryPal', description: 'A Pantry Management System, using llama 3.1', github: 'portfolio/pantrypal' },
-  { id: 3, title: 'Collaborative Text Editor', description: 'A Real-time Rich text editor', github: 'portfolio/editor' },
-  { id: 4, title: 'The QR Code Generator', description: 'Simple QR code Generator', github: 'portfolio/qrcode' },
-  { id: 5, title: 'Notes App', description: 'Simple Notes App with CRUD operations', github: 'portfolio/notes' },
-  { id: 6, title: 'Source Code', description: 'Feel free to use the website design!', github: 'https://github.com/DanTiw/retro_portfolio_dantiw' },
+  { id: 1, title: 'PantryPal', description: 'A Pantry Management System, using llama 3.1', github: 'portfolio/pantrypal' },
+  { id: 2, title: 'Chatify ', description: 'A variety of chatbots for your personalized needs!', github: 'portfolio/chatify' },
+  { id: 3, title: 'Flashcard.AI', description: 'AI-Driven flashcard generator', github: 'portfolio/flashcard' },
+  { id: 4, title: 'Zenith', description: 'An activity tracker made for small scale businesses to assign tasks to Employees', github: '/portfolio/zenith' },
+  { id: 5, title: 'Collaborative Text Editor', description: 'A Real-time Rich text editor', github: 'portfolio/editor' },
+  { id: 6, title: 'The QR Code Generator', description: 'Simple QR code Generator', github: 'portfolio/qrcode' },
+  { id: 7, title: 'Notes App', description: 'Simple Notes App with CRUD operations', github: 'portfolio/notes' },
+  { id: 8, title: 'Source Code', description: 'Feel free to use the website design!', github: 'https://github.com/DanTiw/retro_portfolio_dantiw' },
 ];
 
 const Portfolio = () => {

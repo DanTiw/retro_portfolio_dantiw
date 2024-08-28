@@ -21,6 +21,9 @@ const slugs = [
   "tailwindcss",
   "vercel",
   "python",
+  "supabase",
+  "openai",
+  "meta",
   
 ];
 
