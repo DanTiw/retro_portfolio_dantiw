@@ -1,86 +1,89 @@
-"use client"
+'use client'
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import ResumeLink from '@/components/ResumeLink';
+import { useState } from 'react'
+import Link from 'next/link'
+import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const Navbar: React.FC = () => {
-    const pathname = usePathname();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const navItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Portfolio', path: '/portfolio' },
-        { label: 'Contact Me', path: '/contact' },
-    ];
+  const navLinks = [
+    { label: 'About', href: '/' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Contact', href: '/contact' },
+  ]
 
-    return (
-        <nav className="text-lg md:text-lg lg:text-lg p-4 shadow-xl">
-            <div className="container mx-auto flex justify-between items-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500">
-                <ResumeLink />
+  return (
+    <nav className="bg-bg p-4 shadow-[0_4px_0_0_#000]">
+      <div className="max-w-6xl mx-auto flex justify-center items-center">
+        <div className="hidden md:flex space-x-4 items-center">
+          {navLinks.map((link, index) => (
+            <motion.div
+              key={link.label}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+            >
+              <NavLink label={link.label} href={link.href} />
+            </motion.div>
+          ))}
+        </div>
+        <motion.button
+          className="md:hidden p-2 bg-[#ffc800] border-4 border-black rounded-none shadow-[5px_4px_0px_0px_#000] hover:translate-x-[5px] hover:translate-y-[4px] hover:shadow-none transition-all duration-300"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </motion.button>
+      </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden mt-4 space-y-2"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.label}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <NavLink label={link.label} href={link.href} isMobile />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  )
+}
 
-                {/* Hamburger menu for mobile */}
-                <button
-                    className="md:hidden"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                    <svg className="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="yellow-pink-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#EAB308"/>
-                                {/* yellow-500 */}
-                                <stop offset="100%" stopColor="#EC4899"/>
-                                {/* pink-500 */}
-                            </linearGradient>
-                        </defs>
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 12h16M4 18h16"
-                            stroke="url(#yellow-pink-gradient)"
-                        />
-                    </svg>
-                </button>
+interface NavLinkProps {
+  label: string
+  href: string
+  isMobile?: boolean
+}
 
-                {/* Desktop menu */}
-                <ul className="hidden md:flex space-x-2">
-                    {navItems.map((item) => (
-                        <li key={item.path}>
-                            <Link
-                                href={item.path}
-                                className={` hover:text-gray-800 hover:bg-gradient-to-t to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
-                                    pathname === item.path ? 'text-gray-800 bg-gradient-to-l from-yellow-500 to-pink-500 p-4 rounded-2xl' : ''
-                                }`}
-                            >
-                                {item.label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            {/* Mobile menu */}
-            {isMenuOpen && (
-                <ul className="md:hidden mt-4 space-y-2">
-                    {navItems.map((item) => (
-                        <li key={item.path}>
-                            <Link
-                                href={item.path}
-                                className={`block py-2 px-4 text-white hover:text-white hover:bg-gradient-to-t from-yellow-500 to-pink-500 p-4 rounded-2xl transition-colors duration-300 ${
-                                    pathname === item.path ? 'text-white bg-gradient-to-l from-yellow-500 to-pink-500 p-4 rounded-2xl' : ''
-                                }`}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {item.label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </nav>
-    );
-};
-
-export default Navbar;
+function NavLink({ label, href, isMobile = false }: NavLinkProps) {
+  return (
+    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <Link
+        href={href}
+        className={`
+          px-4 py-2 text-sm font-bold bg-[#ffc800] border-4 border-black rounded-none 
+          hover:rotate-0 transition-all duration-300 shadow-[5px_4px_0px_0px_#000] 
+          hover:translate-x-[5px] hover:translate-y-[4px] hover:shadow-none
+          sm:px-6 sm:py-3 sm:text-base
+          ${isMobile ? 'block w-full text-center' : 'inline-block'}
+        `}
+      >
+        {label.toUpperCase()}
+      </Link>
+    </motion.div>
+  )
+}
