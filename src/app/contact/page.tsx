@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     { 
       icon: <Youtube size={24} />, 
       label: "YouTube", 
-      url: "https://youtube.com/yourusername", 
+      url: "https://www.youtube.com/@DanTiw", 
       color: "bg-red-500",
       hoverColor: "hover:bg-red-600" 
     },
