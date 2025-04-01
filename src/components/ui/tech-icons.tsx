@@ -21,9 +21,7 @@ import {
   SiVercel,
   SiAuth0,
   SiOpenjdk,
-
   SiGooglecloud,
- 
   SiDocker,
 } from "react-icons/si"
 import { motion } from "framer-motion"
