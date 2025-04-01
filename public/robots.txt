@@ -1,0 +1,30 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://danishtiwari.tech/sitemap.xml
+
+# Disallow admin or private routes if you have any
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay for specific bots (optional)
+User-agent: GPTBot
+Crawl-delay: 10
+
+User-agent: ChatGPT-User
+Crawl-delay: 10
+
+# Additional rules for specific search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Prevent duplicate content
+Disallow: /*?* 
