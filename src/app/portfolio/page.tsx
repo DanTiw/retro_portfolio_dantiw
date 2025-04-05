@@ -16,6 +16,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 0,
+    title: "T.E.M.P.L.A.T.E",
+    description: "Generating codebases in seconds",
+    github: "portfolio/template",
+    project_details:
+      "Transforming Engine for Modular Programming, Logic, and Automated Template Execution",
+  },
+  {
+
     id: 1,
     title: "PantryPal",
     description: "A Pantry Management System, using llama 3.1",
